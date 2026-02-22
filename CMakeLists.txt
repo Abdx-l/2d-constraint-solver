@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(constraints LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+find_package(Eigen3 REQUIRED)
+add_executable(solver main.cpp)
+target_link_libraries(solver PRIVATE Eigen3::Eigen)
+enable_testing()
+add_test(NAME geometry COMMAND solver)
